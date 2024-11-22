@@ -43,7 +43,7 @@ const CountryCard = ({ details }: { details: Country }) => {
           <iframe
             width="100%"
             height="500"
-            src={`https://maps.google.com/maps?q=${details?.latlng[0]},${details?.latlng[1]}&hl=es&z=1&amp;output=embed`}
+            src={`https://maps.google.com/maps?q=${details?.latlng[0]},${details?.latlng[1]}&hl=en&z=4&amp&output=embed`}
           ></iframe>
         </div>
       )}
