@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Countrycard.css";
 import { Country } from "../App";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
