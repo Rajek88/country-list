@@ -121,6 +121,9 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
+  .page.centered header {
+    margin-top: 0px;
+  }
   .search-input {
     width: 90%;
   }

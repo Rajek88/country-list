@@ -23,6 +23,7 @@ function App() {
   const [countryList, setCountryList] = useState<Country[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setEror] = useState("");
+  const [update, setUpdate] = useState(0);
 
   const handleInputChange = (input: string) => {
     setCountry(input);
@@ -33,6 +34,7 @@ function App() {
 
   const fetchDetails = async (input: string | null = null) => {
     console.log("calling api");
+    setUpdate((v) => v + 1);
     let countryName = input || country;
     if (!countryName?.length || Number(countryName)) {
       return setEror("Please enter a valid country name");
@@ -56,7 +58,7 @@ function App() {
   };
 
   return (
-    <div className={country.length === 0 ? "page centered" : "page"}>
+    <div className={update === 0 ? "page centered" : "page"}>
       <header>
         <h1>HeyCountry 👋</h1>
       </header>
@@ -76,7 +78,7 @@ function App() {
         <span className="error">---------- {error} ----------</span>
       )}
 
-      {country.length !== 0 &&
+      {update !== 0 &&
         (loading ? (
           <div className="loading">
             <img className="earth-logo" src={EarthImg} alt="earth" />
