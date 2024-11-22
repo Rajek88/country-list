@@ -127,6 +127,12 @@ body {
   .search-input input {
     width: 70%;
   }
+  .country-details h2 {
+    font-size: small !important;
+  }
+  .country-details h4 {
+    font-size: smaller !important;
+  }
 }
 
 /* Keyframes for slide-up and fade-in */
