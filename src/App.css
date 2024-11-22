@@ -1,22 +1,33 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
 }
 
 body {
   padding: 0;
   margin: 0;
+  height: 100vh;
 }
 
 .page {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+
+.page header {
+  margin-top: 20px;
+}
+
+.page header h1 {
+  background-image: linear-gradient(to right, #006dad, #738117);
+  color: transparent;
+  background-clip: text;
 }
 
 .search-input {
@@ -26,6 +37,30 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
+}
+
+.search-input input {
+  padding: 10px;
+  background-color: white;
+  border: 1px solid rgb(198, 198, 198);
+  min-width: 50%;
+  max-width: 250px;
+  border-radius: 30px;
+  height: 18px;
+}
+
+.search-input button {
+  height: 38px;
+  width: 38px;
+  background-color: #006dad;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.search-input button:hover {
+  background-color: orange;
 }
 
 .result-container,
@@ -40,4 +75,78 @@ body {
 
 .country-list {
   width: 100%;
+  gap: 20px;
+}
+
+.result-container h1 {
+  font-size: large;
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading img {
+  width: 100px;
+  height: 100px;
+  animation: rotate 4s infinite;
+  margin-bottom: 10px;
+}
+
+.loading .attribution {
+  font-size: xx-small;
+}
+
+.page.centered {
+  justify-content: center;
+  height: 100vh;
+}
+.page.centered header {
+  margin-top: -100px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .search-input {
+    width: 90%;
+  }
+  .search-input input {
+    width: 70%;
+  }
+}
+
+/* Keyframes for slide-up and fade-in */
+@keyframes slideUpFadeIn {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.error {
+  color: red;
+  font-size: small;
+  margin-top: 10px;
+}
+
+.page header,
+.search-input {
+  animation: slideUpFadeIn 0.5s ease-out forwards; /* Animation settings */
 }
