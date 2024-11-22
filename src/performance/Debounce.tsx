@@ -1,6 +1,6 @@
 export function debounce(
   func: { (): Promise<void>; apply?: any },
-  timeout = 1000
+  timeout = 400
 ) {
   let timer: number;
   return (...args: any) => {
