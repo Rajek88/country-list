@@ -33,7 +33,6 @@ function App() {
   useEffect(() => {}, [countryList]);
 
   const fetchDetails = async (input: string | null = null) => {
-    console.log("calling api");
     setUpdate((v) => v + 1);
     let countryName = input?.trim() || country;
     if (!countryName?.trim()?.length || Number(countryName)) {
@@ -41,6 +40,8 @@ function App() {
     }
     try {
       setLoading(true);
+      console.log("calling api");
+
       const res = await fetch(
         `${API_BASE_URL}/${API_ROUTE_NAME.NAME}/${countryName}`
       );
