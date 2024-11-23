@@ -36,7 +36,7 @@ function App() {
     console.log("calling api");
     setUpdate((v) => v + 1);
     let countryName = input || country;
-    if (!countryName?.length || Number(countryName)) {
+    if (!countryName?.trim()?.length || Number(countryName)) {
       return setEror("Please enter a valid country name");
     }
     try {
