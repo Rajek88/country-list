@@ -27,7 +27,7 @@ function App() {
 
   const handleInputChange = (input: string) => {
     setCountry(input?.trim());
-    debounce(() => fetchDetails(input))();
+    debounce(() => fetchDetails(input?.trim()))();
   };
 
   useEffect(() => {}, [countryList]);
