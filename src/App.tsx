@@ -26,8 +26,8 @@ function App() {
   const [update, setUpdate] = useState(0);
 
   const handleInputChange = (input: string) => {
-    setCountry(input?.trim());
-    debounce(() => fetchDetails(input?.trim()))();
+    setCountry(input);
+    debounce(() => fetchDetails(input))();
   };
 
   useEffect(() => {}, [countryList]);
@@ -35,7 +35,7 @@ function App() {
   const fetchDetails = async (input: string | null = null) => {
     console.log("calling api");
     setUpdate((v) => v + 1);
-    let countryName = input || country;
+    let countryName = input?.trim() || country;
     if (!countryName?.trim()?.length || Number(countryName)) {
       return setEror("Please enter a valid country name");
     }
