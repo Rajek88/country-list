@@ -26,7 +26,7 @@ function App() {
   const [update, setUpdate] = useState(0);
 
   const handleInputChange = (input: string) => {
-    setCountry(input);
+    setCountry(input?.trim());
     debounce(() => fetchDetails(input))();
   };
 
